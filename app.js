@@ -24,11 +24,13 @@ async function main() {
 main().catch((err) => console.log(err));
 
 const { taskRouter } = require("./routes/task.routes");
+const { userRouter } = require("./routes/user.routes");
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/tasks", taskRouter);
+app.use("/users", userRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
