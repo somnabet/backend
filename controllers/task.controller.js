@@ -2,7 +2,7 @@ const { taskModel } = require("../models/task.model");
 
 const getTasks = async (req, res) => {
   const data = await taskModel.find();
-  res.json(data);
+  res.status(200).json(data);
 };
 
 const addTask = async (req, res) => {
